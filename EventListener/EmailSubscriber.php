@@ -88,7 +88,7 @@ class EmailSubscriber extends CommonSubscriber
     {
         $tokens = [];
         $lead = $event->getLead();
-        $request = "http://localhost/alerts/templates/alerts.php?id=";
+        $request = "http://".$_SERVER['HTTP_HOST']."/alerts/templates/alerts.php?id=";
 
         $params  = array (
             'content' => file_get_contents($request.$lead['my_vhl_id']),
