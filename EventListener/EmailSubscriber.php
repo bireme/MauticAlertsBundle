@@ -91,7 +91,7 @@ class EmailSubscriber extends CommonSubscriber
         $request = "http://alertas.platserv.bvsalud.org/alerts/templates/alerts.php?id=";
 
         $params  = array (
-            'content' => file_get_contents($request.$lead['my_vhl_id']),
+            'content' => file_get_contents($request.$lead['my_vhl_id'].'&lang='.$lead['alerts_lang']),
         );
 
         //$content = $event->getContent();
