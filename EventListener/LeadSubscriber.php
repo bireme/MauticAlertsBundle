@@ -11,16 +11,16 @@
 
 namespace MauticPlugin\MauticAlertsBundle\EventListener;
 
-use Mautic\CoreBundle\EventListener\CommonSubscriber;
 use Mautic\LeadBundle\Event as Events;
 use Mautic\LeadBundle\LeadEvents;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class LeadSubscriber
  *
  * @package Mautic\LeadBundle\EventListener
  */
-class LeadSubscriber extends CommonSubscriber
+class LeadSubscriber implements EventSubscriberInterface
 {
 
     /**

@@ -11,15 +11,15 @@
 
 namespace MauticPlugin\MauticAlertsBundle\EventListener;
 
-use Mautic\CoreBundle\EventListener\CommonSubscriber;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\EmailBuilderEvent;
 use Mautic\EmailBundle\Event\EmailSendEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class EmailSubscriber
  */
-class EmailSubscriber extends CommonSubscriber
+class EmailSubscriber implements EventSubscriberInterface
 {
     /**
      * @return array

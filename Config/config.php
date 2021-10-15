@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package     Mautic
  * @copyright   2014 Mautic Contributors. All rights reserved.
@@ -16,12 +17,12 @@ return array(
 	'services'    => array(
         'events' => array(
             'plugin.alerts.emailbundle.subscriber' => array(
-                'class' => 'MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber'
+                'class' => \MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber::class
             )
         ),
         'forms' => array(
             'plugin.alerts.form' => array(
-                'class' => 'MauticPlugin\MauticAlertsBundle\Form\Type\AlertsType',
+                'class' => \MauticPlugin\MauticAlertsBundle\Form\Type\AlertsType::class,
                 'alias' => 'alerts'
             )
         )

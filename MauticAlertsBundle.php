@@ -10,6 +10,7 @@
 namespace MauticPlugin\MauticAlertsBundle;
 
 use Mautic\PluginBundle\Bundle\PluginBundleBase;
+use Mautic\IntegrationsBundle\Bundle\AbstractPluginBundle;
 
 class MauticAlertsBundle extends PluginBundleBase
 {
