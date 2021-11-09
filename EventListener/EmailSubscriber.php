@@ -11,10 +11,12 @@
 
 namespace MauticPlugin\MauticAlertsBundle\EventListener;
 
+use Mautic\CoreBundle\Helper\TemplatingHelper;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\EmailBuilderEvent;
 use Mautic\EmailBundle\Event\EmailSendEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Class EmailSubscriber
@@ -22,9 +24,27 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class EmailSubscriber implements EventSubscriberInterface
 {
     /**
+     * @var TranslatorInterface
+     */
+    private $translator;
+
+    /**
+     * @var TemplatingHelper
+     */
+    private $templating;
+
+    public function __construct(
+        TranslatorInterface $translator,
+        TemplatingHelper $templating
+    ) {
+        $this->translator = $translator;
+        $this->templating = $templating;
+    }
+
+    /**
      * @return array
      */
-    static public function getSubscribedEvents()
+    public static function getSubscribedEvents()
     {
         return array(
             EmailEvents::EMAIL_ON_BUILD   => ['onEmailBuild', 0],

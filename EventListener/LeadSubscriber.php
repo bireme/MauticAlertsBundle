@@ -29,8 +29,8 @@ class LeadSubscriber implements EventSubscriberInterface
     static public function getSubscribedEvents()
     {
         return array(
-            LeadEvents::LEAD_POST_SAVE     => array('onLeadPostSave', 0),
-            LeadEvents::LEAD_POST_DELETE   => array('onLeadDelete', 0)
+            LeadEvents::LEAD_POST_SAVE   => array('onLeadPostSave', 0),
+            LeadEvents::LEAD_POST_DELETE => array('onLeadDelete', 0)
         );
     }
 

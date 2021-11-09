@@ -17,7 +17,11 @@ return array(
 	'services'    => array(
         'events' => array(
             'plugin.alerts.emailbundle.subscriber' => array(
-                'class' => \MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber::class
+                'class' => \MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber::class,
+                'arguments' => array(
+                    'translator',
+                    'mautic.helper.templating',
+                )
             )
         ),
         'forms' => array(
