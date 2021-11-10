@@ -10,7 +10,7 @@
 
 return array(
     'name'        => 'Alertas',
-    'description' => 'Ativa o token {alerts} para inserir o template de alertas da Minha BVS nos emails do Mautic.',
+    'description' => 'Ativa o token {alerts} para inserir o template de alertas da MinhaBVS nos emails do Mautic.',
     'author'      => 'Wilson Moura',
     'version'     => '1.0.0',
 
