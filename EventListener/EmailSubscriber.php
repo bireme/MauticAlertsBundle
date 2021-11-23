@@ -108,7 +108,7 @@ class EmailSubscriber implements EventSubscriberInterface
     {
         $tokens = [];
         $lead = $event->getLead();
-        $request = "http://alertas.platserv.bvsalud.org/alerts/templates/alerts.php?id=";
+        $request = "https://alertas.platserv.bvsalud.org/alerts/templates/alerts.php?id=";
 
         $params  = array (
             'content' => file_get_contents($request.$lead['my_vhl_id'].'&lang='.$lead['alerts_lang']),
