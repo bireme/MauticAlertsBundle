@@ -115,7 +115,7 @@ class EmailSubscriber implements EventSubscriberInterface
         );
 
         //$content = $event->getContent();
-        $content = $this->templating->render(
+        $content = $this->templating->getTemplating()->render(
             'MauticAlertsBundle:SubscribedEvents\EmailToken:token.html.php',
             $params
         );
