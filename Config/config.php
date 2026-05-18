@@ -19,8 +19,7 @@ return array(
             'plugin.alerts.emailbundle.subscriber' => array(
                 'class' => \MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber::class,
                 'arguments' => array(
-                    'translator',
-                    'mautic.helper.templating',
+                    'translator'
                 )
             )
         ),
