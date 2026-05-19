@@ -12,11 +12,11 @@
 namespace MauticPlugin\MauticAlertsBundle\EventListener;
 
 use Mautic\CoreBundle\Helper\TemplatingHelper;
+use Mautic\CoreBundle\Translation\Translator;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\EmailBuilderEvent;
 use Mautic\EmailBundle\Event\EmailSendEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Translation\Translator;
 
 /**
  * Class EmailSubscriber
