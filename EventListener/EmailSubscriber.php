@@ -16,7 +16,7 @@ use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\EmailBuilderEvent;
 use Mautic\EmailBundle\Event\EmailSendEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Translation\Translator;
 
 /**
  * Class EmailSubscriber
@@ -34,7 +34,7 @@ class EmailSubscriber implements EventSubscriberInterface
     private $templating;
 
     public function __construct(
-        TranslatorInterface $translator,
+        Translator $translator,
         TemplatingHelper $templating
     ) {
         $this->translator = $translator;
