@@ -11,7 +11,7 @@
 
 namespace MauticPlugin\MauticAlertsBundle\EventListener;
 
-use Mautic\CoreBundle\Helper\TemplatingHelper;
+use Twig\Environment;
 use Mautic\CoreBundle\Translation\Translator;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\EmailBuilderEvent;
@@ -35,10 +35,10 @@ class EmailSubscriber implements EventSubscriberInterface
 
     public function __construct(
         Translator $translator,
-        TemplatingHelper $templating
+        Environment $twig
     ) {
         $this->translator = $translator;
-        $this->templating = $templating;
+        $this->twig = $twig;
     }
 
     /**
@@ -115,7 +115,7 @@ class EmailSubscriber implements EventSubscriberInterface
         );
 
         //$content = $event->getContent();
-        $content = $this->templating->getTemplating()->render(
+        $content = $this->twig->render(
             'MauticAlertsBundle:SubscribedEvents\EmailToken:token.html.php',
             $params
         );

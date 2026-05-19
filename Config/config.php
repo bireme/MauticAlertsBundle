@@ -20,7 +20,7 @@ return array(
                 'class' => \MauticPlugin\MauticAlertsBundle\EventListener\EmailSubscriber::class,
                 'arguments' => array(
                      'translator',
-		     'templating'
+		     'twig'
                 )
             )
         ),
